@@ -753,6 +753,8 @@ encode_iter(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
 
         curr = termstack_pop(&stack);
 
+        enif_fprintf(stderr, "JIFFY DEBUG: %T\n", curr);
+
         if(enif_is_atom(env, curr)) {
             if(enif_is_identical(curr, e->atoms->ref_object)) {
                 curr = termstack_pop(&stack);
